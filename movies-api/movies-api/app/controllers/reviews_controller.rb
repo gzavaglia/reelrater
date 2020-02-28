@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
     def index
-        # reviews = Review.all
         movie = Movie.find(params[:movie_id])
         reviews = movie.reviews
 
@@ -9,9 +8,9 @@ class ReviewsController < ApplicationController
 
     def show
         movie = Movie.find(params[:movie_id])
-        reviews = movie.reviews
+        review = movie.reviews.find(params[:id])
 
-        render json: reviews, status: 200
+        render json: review, status: 200
     end
 
     def create
