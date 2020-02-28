@@ -1,16 +1,16 @@
-# TODO
+# README
 
-- Movies DB:
-    - title
-    - image_url
-    - description
+# ACTUALLY THIS IS A TODO
 
-- Reviews DB:
-    - user
-    - stars
-    - text
-    - movie_id
+- Movies
+    - title (string)
+    - image (string)
+    - sinopsis (string)
+HAS_MANY REVIEWS
 
-RELATIONSHIPS
-- movie has_many reviews
-- review belongs_to movie
+- Reviews 
+    - name (string)
+    - stars (integer)
+    - body (string)
+    - movie_id (integer)
+BELONGS_TO MOVIE
