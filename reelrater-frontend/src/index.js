@@ -12,7 +12,7 @@ import thunk from 'redux-thunk'
 const store = createStore(movieReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
-<Provider>
+<Provider store={store}>
     <App />
 </Provider>, 
 document.getElementById('root'));
