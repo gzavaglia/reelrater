@@ -5,7 +5,7 @@ export default class MovieCard extends React.Component{
     render(){
         return(
             <MovieOne>
-                yoooo
+                
             </MovieOne>
         )
     }
