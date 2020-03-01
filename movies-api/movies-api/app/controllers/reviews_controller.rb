@@ -9,8 +9,10 @@ class ReviewsController < ApplicationController
     def show
         movie = Movie.find(params[:movie_id])
         review = movie.reviews.find(params[:id])
-
         render json: review, status: 200
+        # else
+        #     render json: {message: "there's no review with that id"}, status: 400
+        # end
     end
 
     def create
