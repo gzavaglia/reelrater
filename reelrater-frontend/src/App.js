@@ -1,17 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 import Home from './components/Home'
+import MoviesContainer from './containers/MoviesContainer'
 
 function App() {
   return (
     
     <Router>
       <div className="App">
+        <Switch>
         <Route path='/movies'>
-          Movies
+          <MoviesContainer />
         </Route>
 
         <Route path='/'>
@@ -21,6 +22,7 @@ function App() {
         <Route path='/movies/:id'>
           one movie
         </Route>
+        </Switch>
 
       </div>
     </Router>
