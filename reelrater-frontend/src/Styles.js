@@ -13,4 +13,8 @@ const MoviesLounge = styled.div`
     border: 3px solid red;
 `
 
-export { MovieOne, MoviesLounge };
+const HomeDiggity = styled.div
+`background-color: #D0E8E3;
+border: 3px solid black;`
+
+export { MovieOne, MoviesLounge, HomeDiggity };

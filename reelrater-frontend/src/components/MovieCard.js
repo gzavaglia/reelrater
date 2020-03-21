@@ -1,5 +1,6 @@
 import React from 'react'
 import { MovieOne } from "../Styles";
+import { Link } from 'react-router-dom'
 
 export default class MovieCard extends React.Component{
     movieList = () => {
@@ -8,9 +9,9 @@ export default class MovieCard extends React.Component{
                 <MovieOne
                     key={movie.id}
                     title={movie}
-            >{movie.title}<br/>
-            <img key={movie.id} src={movie.image} alt={movie.id} />
-            </MovieOne>
+                    ><Link to={`/movies/${movie.id}`}>{movie.title}</Link><br/>
+                    <img key={movie.id} src={movie.image} alt={movie.id} />
+                </MovieOne>
             )
         })
     }
