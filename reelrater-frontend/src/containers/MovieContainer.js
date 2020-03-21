@@ -3,7 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
 import {fetchMovie} from '../actions/movieAction'
-import { MovieOne } from '../Styles'
+import { ShowMovie } from '../Styles'
 
 
 class MovieContainer extends React.Component{
@@ -18,16 +18,21 @@ class MovieContainer extends React.Component{
         this.props.fetchMovie(this.id)
     }
 
+    goBack = () => {
+        this.props.history.push("/movies")
+    }
+
     render(){
         console.log(this.props.movies.reviews)
         return(
             <div>
-                <MovieOne>
-                   {this.props.movies.title}
-                   
-                </MovieOne>
+                <ShowMovie>
+                   <h1>{this.props.movies.title}</h1>
+                   <img src={this.props.movies.image}/><br/>
+                   <p>{this.props.movies.sinopsis}</p>
+                </ShowMovie>
                 <br/>
-                <Link to="/movies">All Movies</Link>
+                <a href='http://localhost:3006/movies'>Back to Movies</a>
             </div>
         )
     }
