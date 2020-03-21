@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 import Home from './components/Home'
 import MoviesContainer from './containers/MoviesContainer'
+import MovieContainer from './containers/MovieContainer'
 
 function App() {
   return (
@@ -11,6 +12,11 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+
+        <Route exact path='/movies/:id'>
+          <MovieContainer />
+        </Route>
+        
         <Route path='/movies'>
           <MoviesContainer />
         </Route>
@@ -19,9 +25,6 @@ function App() {
           <Home/>
         </Route>
 
-        <Route path='/movies/:id'>
-          one movie
-        </Route>
         </Switch>
 
       </div>

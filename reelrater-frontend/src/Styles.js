@@ -6,6 +6,10 @@ const MovieOne = styled.div`
   display: inline-block;
   padding: 10px;
   margin: 10px;
+  img{
+    width: 30%;
+    height: auto;
+  }
 `;
 
 const MoviesLounge = styled.div`

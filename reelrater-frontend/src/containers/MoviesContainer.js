@@ -7,12 +7,12 @@ import { fetchMovies } from '../actions/movieAction'
 class MoviesContainer extends React.Component{
 
     componentDidMount(){
-        console.log(this.props)
+        //console.log(this.props)
         this.props.fetchMovies()
     }
 
     handleLoading = () => {
-        console.log(this.props.loading)
+        //console.log(this.props.loading)
         if(this.props.loading){
             return(
                 <div>
@@ -27,10 +27,10 @@ class MoviesContainer extends React.Component{
     }
 
     render(){
-        console.log(this.props.movies)
+        //console.log(this.props.movies)
         return(
             <MoviesLounge>
-                all movies:
+                <h1>Movies:</h1>
                 {this.handleLoading()}
             </MoviesLounge>
         )
