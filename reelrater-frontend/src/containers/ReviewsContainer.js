@@ -15,18 +15,39 @@ class ReviewsContainer extends React.Component{
 
     componentDidMount(){
         //console.log(this.id)
-        this.props.fetchMovie(this.id)
+        //this.props.fetchMovie(this.id)
+        this.props.fetchMovieReviews(this.id)
+    }
+
+    handleLoading = () => {
+        //console.log(this.props.movies.reviews)
+        this.reviews = this.props.movies.reviews
+        //console.log(reviews)
+        if(this.props.loading){
+            return(
+                <div>
+                    Loading...
+                </div>
+            )
+        } else {
+            return(
+                <div>
+                    {console.log(this.reviews)}
+                    <Review reviews={this.reviews}></Review>
+                </div>
+            
+            )
+        }
     }
 
     render(){
-        console.log(this.props.movies.reviews)
+        //console.log(this.props.movies.reviews)
         return(
-            <h2>
-                Reviews
-            </h2>
+            <div>
+                {this.handleLoading()}
+            </div>
         )
     }
-
 
 }
 
@@ -39,7 +60,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchMovie: (movie_id) => dispatch(fetchMovie(movie_id))
+        //fetchMovie: (movie_id) => dispatch(fetchMovie(movie_id)),
+        fetchMovieReviews: (movie_id) => dispatch(fetchMovieReviews(movie_id))
     }
 }
 
