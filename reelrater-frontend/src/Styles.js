@@ -18,13 +18,15 @@ const ShowMovie = styled.div`
   display: inline-block;
   padding: 10px;
   margin: 10px;
-  img{
-    width: auto;
-    height: 100%;
+  img {
+    width:170px;
+    height:auto;
+    margin-left:15px;
+    float: left
   }
   p{
     padding: 10px;
-    border: 2px solid blue;
+    
   }
 `;
 

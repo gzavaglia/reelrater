@@ -1,9 +1,9 @@
-const ADD_REVIEW = "ADD_REVIEW"
+const GET_REVIEWS = "GET_REVIEW"
 const ADD_MOVIE = "ADD_MOVIE"
 const ADD_MOVIES = "ADD_MOVIES"
 
 export {
     ADD_MOVIE,
     ADD_MOVIES,
-    ADD_REVIEW
+    GET_REVIEWS
 }

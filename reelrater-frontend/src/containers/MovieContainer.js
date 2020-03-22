@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
 import {fetchMovie} from '../actions/movieAction'
 import { ShowMovie } from '../Styles'
+import ReviewsContainer from './ReviewsContainer'
 
 
 class MovieContainer extends React.Component{
@@ -32,6 +33,7 @@ class MovieContainer extends React.Component{
                    <p>{this.props.movies.sinopsis}</p>
                 </ShowMovie>
                 <br/>
+                <ReviewsContainer/>
                 <a href='http://localhost:3006/movies'>Back to Movies</a>
             </div>
         )

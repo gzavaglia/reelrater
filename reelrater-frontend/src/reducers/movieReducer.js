@@ -1,4 +1,4 @@
-import { ADD_MOVIE } from '../actions/actionTypes'
+// import { ADD_MOVIE } from '../actions/actionTypes'
 
 const movieReducer = (state = {movies: [], loading: false}, action) => {
     switch(action.type){
