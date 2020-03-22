@@ -24,7 +24,7 @@ class MovieContainer extends React.Component{
     }
 
     render(){
-        console.log(this.props.movies.reviews)
+        //console.log(this.props.movies.reviews)
         return(
             <div>
                 <ShowMovie>
