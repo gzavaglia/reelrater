@@ -1,18 +1,31 @@
 import React from 'react'
-//import { MovieOne } from "../Styles";
+import { ReviewLounge } from "../Styles";
 //import { Link } from 'react-router-dom'
 
 export default class Review extends React.Component{
+    
+    
     componentDidMount(){
-        console.log(this.props)
+        console.log("here")
+        //console.log(this.props.movie.reviews)
+    }
+
+    reviewList = () => {
+        return this.props.movie.reviews.map(r =>{
+            return(
+                <ReviewLounge key={r.id}>
+                    <label>{r.name}</label>
+                </ReviewLounge>
+            )
+        })
     }
 
     render(){
-        //console.log(this.props.movies)
+        console.log(this.props.movie.reviews)
         return(
-            <p>
-                Review
-            </p>
+            <ul>
+                {this.reviewList()}
+            </ul>
         )
     }
 }

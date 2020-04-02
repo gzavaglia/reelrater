@@ -11,11 +11,11 @@ class MovieContainer extends React.Component{
     constructor(props){
         super(props)
         this.id = props.match.params.id
-        //this.title = props.match.params.title
     }
 
     componentDidMount(){
-        //console.log(this.props)
+        //const mov = this.props.movies.filter(m => m.id === this.id)
+        console.log(this.props)
         this.props.fetchMovie(this.id)
     }
 
@@ -24,7 +24,6 @@ class MovieContainer extends React.Component{
     }
 
     render(){
-        //console.log(this.props.movies.reviews)
         return(
             <div>
                 <ShowMovie>
@@ -33,7 +32,6 @@ class MovieContainer extends React.Component{
                    <p>{this.props.movies.sinopsis}</p>
                 </ShowMovie>
                 <br/>
-                <ReviewsContainer/>
                 <a href='http://localhost:3006/movies'>Back to Movies</a>
             </div>
         )
@@ -41,7 +39,8 @@ class MovieContainer extends React.Component{
 }
 
 const mapStateToProps = (state) => ({
-    movies: state.movies
+    movies: state.movies,
+    loading: state.loading
 })
 
 const mapDispatchToProps = (dispatch) => {

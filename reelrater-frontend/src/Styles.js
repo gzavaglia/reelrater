@@ -39,4 +39,8 @@ const HomeDiggity = styled.div
 `background-color: #D0E8E3;
 border: 3px solid black;`
 
-export { MovieOne, MoviesLounge, HomeDiggity, ShowMovie };
+const ReviewLounge = styled.div
+`background-color: #D0E8E3;
+border: 3px solid black;`
+
+export { MovieOne, MoviesLounge, HomeDiggity, ShowMovie, ReviewLounge };
