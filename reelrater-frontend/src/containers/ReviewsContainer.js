@@ -14,43 +14,29 @@ class ReviewsContainer extends React.Component{
     }
 
     componentDidMount(){
-        console.log(this.props)
-        this.props.fetchMovie(this.id)
-        //this.props.fetchMovieReviews(this.id)
+        console.log("here review")
+        //this.props.fetchMovie(this.id)
+        this.props.fetchMovieReviews(this.id)
     }
 
     renderReviews = () => {
-        if(this.props.movies.length > 0){
-            const movie = this.props.movies[this.id-1]
-            const reviews = movie.reviews
-            //console.log(reviews)
-            if(reviews){
-                return reviews.map(r => {
-                    return <div key={`${movie.id}${r.id}`}>
-                        <Review key={`${r.id}`} id={r.id} movie={movie}/>
-                    </div>
-                })
+        
+                return <div> Reviews: {this.id} </div>
+                
             }
-        }
-    }
+        
+    
 
     handleLoading = () => {
         //console.log(this.props.movies.reviews)
        
-        if(this.props.loading){
-            return(
-                <div>
-                    Loading...
-                </div>
-            )
-        } else {
             return(
                 <div>
                     <Review key={this.id} movies={this.props.movies}></Review>
                 </div>
             
             )
-        }
+        
     }
 
     render(){
@@ -68,6 +54,7 @@ class ReviewsContainer extends React.Component{
 const mapStateToProps = state => {
     return {
         movies: state.movies,
+        reviews: state.reviews,
         loading: state.loading
     }
 }

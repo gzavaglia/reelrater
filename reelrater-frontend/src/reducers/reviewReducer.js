@@ -1,20 +1,9 @@
-import { LOADING_REVIEWS } from '../actions/actionTypes'
+import { GET_REVIEWS } from '../actions/actionTypes'
 
-const reviewReducer = (state = {movies: [], loading: false}, action) => {
+const reviewReducer = (state = [], action) => {
     switch(action.type){
-        case 'LOADING_REVIEWS':
-            return {
-                ...state,
-                movies: [...state.movies],
-                loading: true
-            }
-        case 'GET_REVIEWS':
-            return{
-                ...state,
-                movies: action.payload,
-                loading: false
-            }
-
+        case GET_REVIEWS:
+            return [ ...state, action.payload ]
         
         default:
             return state

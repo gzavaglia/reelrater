@@ -1,7 +1,12 @@
-import {GET_REVIEWS} from './actionTypes'
+import {GET_REVIEWS, LOADING_REVIEWS} from './actionTypes'
 
-export const fetchMovieReviews = (movie_id) => dispatch => {
-    fetch(`http://localhost:3000/movies/${movie_id}/reviews`)
-    .then(resp => resp.json())
-    .then(reviews => dispatch({ type: GET_REVIEWS, payload: reviews}))
+export const fetchMovieReviews = (movie_id) => {
+    return(dispatch) => {
+        dispatch({type: LOADING_REVIEWS})
+        fetch(`http://localhost:3000/movies/${movie_id}/reviews`)
+        .then(res => {return res.json()})
+        .then(resJSON => {
+            dispatch({type: GET_REVIEWS, reviews: resJSON})
+        })
+    }
 }

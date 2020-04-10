@@ -31,6 +31,7 @@ class MovieContainer extends React.Component{
                    <img src={this.props.movies.image}/><br/>
                    <p>{this.props.movies.sinopsis}</p>
                 </ShowMovie>
+                <ReviewsContainer />
                 <br/>
                 <a href='http://localhost:3006/movies'>Back to Movies</a>
             </div>
